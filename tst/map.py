@@ -60,64 +60,91 @@ def bbox_iou_x1y1x2y2(box1, box2):
     return iou.tolist() if list_flag else iou
 
 
-def calculate_ap(rec, prec):
+def mark_predict_tp_fp_in_one_image(predict_bbox_array, predict_conf_array, gt_bbox_array, iou_threshold):
+    """
+    :param predict_array: array([[xmin, ymin, xmax, ymax], ...])
+    :param predict_conf_array: array([conf1, conf2, ...])
+    :param gt_array: array([[xmin, ymin, xmax, ymax], ...])
+    :return: array([[conf, tp, fp], ...])
+    """
+    assert len(gt_bbox_array) > 0
+    gt_occupy = np.zeros(len(gt_bbox_array))
 
-    # correct AP calculation
-    # first append sentinel values at the end
-    mrec = np.concatenate(([0.], rec, [1.]))
-    mpre = np.concatenate(([0.], prec, [0.]))
+    sorted_ind = np.argsort(-predict_conf_array, kind='mergesort')
+    predict_bbox_array = predict_bbox_array[sorted_ind, :]
 
-    # compute the precision envelope
-    for i in range(mpre.size - 1, 0, -1):
-        mpre[i - 1] = np.maximum(mpre[i - 1], mpre[i])
+    conf = predict_conf_array[sorted_ind]
 
-    # to calculate area under PR curve, look for points
-    # where X axis (recall) changes value
-    i = np.where(mrec[1:] != mrec[:-1])[0]
-
-    # and sum (\Delta recall) * prec
-    ap = np.sum((mrec[i + 1] - mrec[i]) * mpre[i + 1])
-    return ap
-
-
-def calculate_recall_and_precision(gt_bbox,
-                                   predict_bbox_list,
-                                   confidence,
-                                   iou_threshold,
-                                   ):
-    assert len(gt_bbox) > 0
-    gt_occupy = np.zeros(len(gt_bbox))
-
-    sorted_ind = np.argsort(-confidence)
-    predict_bbox_list = predict_bbox_list[sorted_ind, :]
-
-    predict_len = len(predict_bbox_list)
-    true_positive = np.zeros(predict_len)
-    false_positive = np.zeros(predict_len)
+    predict_len = len(predict_bbox_array)
+    tp = np.zeros(predict_len)  # true_positive
+    fp = np.zeros(predict_len)  # false_positive
 
     for pre_idx in range(predict_len):
-        predict_bbox = predict_bbox_list[pre_idx]
+        predict_bbox = predict_bbox_array[pre_idx]
 
-        ious = bbox_iou_x1y1x2y2(predict_bbox, gt_bbox)
+        ious = bbox_iou_x1y1x2y2(predict_bbox, gt_bbox_array)
         iou_max = np.max(ious)
         iou_max_idx = np.argmax(ious)
 
         if iou_max > iou_threshold:
             if gt_occupy[iou_max_idx] == 0:
-                true_positive[iou_max_idx] = 1
+                tp[iou_max_idx] = 1
                 gt_occupy[iou_max_idx] = 1
             else:
-                false_positive[iou_max_idx] = 1
+                fp[iou_max_idx] = 1
         else:
-            false_positive[iou_max_idx] = 1
+            fp[iou_max_idx] = 1
 
-    fp = np.cumsum(false_positive)
-    tp = np.cumsum(true_positive)
+    conf = np.expand_dims(conf, axis=1)
+    tp = np.expand_dims(tp, axis=1)
+    fp = np.expand_dims(fp, axis=1)
 
-    recall = tp / float(len(gt_bbox))
-    precision = tp / np.maximum(tp + fp, np.finfo(np.float64).eps)
+    conf_tp_fp_array = np.concatenate((conf, tp, fp), axis=1)
+    return conf_tp_fp_array
+
+
+def calculate_recall_and_precision(conf_tp_fp_array, all_gt_num):
+    """
+    :param conf_tp_fp_array: array([[conf, tp, fp], ...])
+    :return:
+    """
+    conf = conf_tp_fp_array[:, 0]
+    sorted_ind = np.argsort(-conf, kind='mergesort')
+    conf_tp_fp_array = conf_tp_fp_array[sorted_ind, :]
+
+    tp = conf_tp_fp_array[:, 1]
+    fp = conf_tp_fp_array[:, 2]
+    tp_cum = np.cumsum(tp)
+    fp_cum = np.cumsum(fp)
+
+    recall = tp_cum / float(all_gt_num)
+    precision = tp_cum / np.maximum(tp_cum + fp_cum, np.finfo(np.float64).eps)
 
     return recall, precision
+
+
+# def calculate_ap(recall, precision):
+#
+#     # correct AP calculation
+#     # first append sentinel values at the end
+#     mrec = np.concatenate(([0.], rec, [1.]))
+#     mpre = np.concatenate(([0.], prec, [0.]))
+#
+#     # compute the precision envelope
+#     for i in range(mpre.size - 1, 0, -1):
+#         mpre[i - 1] = np.maximum(mpre[i - 1], mpre[i])
+#
+#     # to calculate area under PR curve, look for points
+#     # where X axis (recall) changes value
+#     i = np.where(mrec[1:] != mrec[:-1])[0]
+#
+#     # and sum (\Delta recall) * prec
+#     ap = np.sum((mrec[i + 1] - mrec[i]) * mpre[i + 1])
+#     return ap
+
+
+def calculate_map():
+    pass
 
 
 def draw_plot(mrec, mprec, ap):
@@ -151,42 +178,44 @@ def draw_plot(mrec, mprec, ap):
         plt.cla()  # clear axes for next plot
 
 
-def calculate_map():
-    pass
-
 
 if __name__ == '__main__':
-    # targets are in cls, x, y, w, h
-    target_ano = {'1.jpg': [[1, 100, 100, 100, 100], [1, 300, 300, 20, 20], [1, 400, 400, 100, 100]],
-                  '2.jpg': [[1, 100, 100, 100, 100], [1, 300, 300, 20, 20], [1, 400, 400, 100, 100]],
-                  '3.jpg': [[1, 100, 100, 100, 100], [1, 300, 300, 20, 20], [1, 400, 400, 100, 100]],
-                  }
+    conf_tp_fp_array = mark_predict_tp_fp_in_one_image()
 
-    # dets are in cls, confidence, x, y, w, h
-    dets = [
-        ['1.jpg', 1, 0.95, 100, 100, 90, 90],
-        ['1.jpg', 1, 0.7, 300, 300, 21, 21],
-        ['1.jpg', 1, 0.8, 400, 400, 99, 99],
-        ['1.jpg', 1, 0.9, 10, 10, 10, 10],
 
-        ['2.jpg', 1, 0.95, 100, 100, 90, 90],
-        ['2.jpg', 1, 0.85, 300, 300, 2, 2],
-        ['2.jpg', 1, 0.8, 400, 400, 99, 99],
-        ['2.jpg', 1, 0.9, 10, 10, 10, 10],
-        ['2.jpg', 1, 0.3, 10, 10, 10, 10],
-        ['2.jpg', 1, 0.4, 10, 10, 10, 10],
-        ['2.jpg', 1, 0.3, 10, 10, 10, 10],
-        ['2.jpg', 1, 0.2, 10, 10, 10, 10],
 
-        ['3.jpg', 1, 0.95, 100, 100, 90, 90],
-        ['3.jpg', 1, 0.6, 300, 300, 21, 21],
-        ['3.jpg', 1, 0.8, 400, 400, 99, 99],
-        ['3.jpg', 1, 0.9, 10, 10, 10, 10],
-        ['3.jpg', 1, 0.3, 10, 10, 10, 10],
-        ['3.jpg', 1, 0.2, 10, 10, 10, 10],
-    ]
 
-    rec, prec, ap = det_eval(dets, target_ano, 1, 0.75, plot=True)
-    print(rec)
-    print(prec)
-    print(ap)
+    # # targets are in cls, x, y, w, h
+    # target_ano = {'1.jpg': [[1, 100, 100, 100, 100], [1, 300, 300, 20, 20], [1, 400, 400, 100, 100]],
+    #               '2.jpg': [[1, 100, 100, 100, 100], [1, 300, 300, 20, 20], [1, 400, 400, 100, 100]],
+    #               '3.jpg': [[1, 100, 100, 100, 100], [1, 300, 300, 20, 20], [1, 400, 400, 100, 100]],
+    #               }
+    #
+    # # dets are in cls, confidence, x, y, w, h
+    # dets = [
+    #     ['1.jpg', 1, 0.95, 100, 100, 90, 90],
+    #     ['1.jpg', 1, 0.7, 300, 300, 21, 21],
+    #     ['1.jpg', 1, 0.8, 400, 400, 99, 99],
+    #     ['1.jpg', 1, 0.9, 10, 10, 10, 10],
+    #
+    #     ['2.jpg', 1, 0.95, 100, 100, 90, 90],
+    #     ['2.jpg', 1, 0.85, 300, 300, 2, 2],
+    #     ['2.jpg', 1, 0.8, 400, 400, 99, 99],
+    #     ['2.jpg', 1, 0.9, 10, 10, 10, 10],
+    #     ['2.jpg', 1, 0.3, 10, 10, 10, 10],
+    #     ['2.jpg', 1, 0.4, 10, 10, 10, 10],
+    #     ['2.jpg', 1, 0.3, 10, 10, 10, 10],
+    #     ['2.jpg', 1, 0.2, 10, 10, 10, 10],
+    #
+    #     ['3.jpg', 1, 0.95, 100, 100, 90, 90],
+    #     ['3.jpg', 1, 0.6, 300, 300, 21, 21],
+    #     ['3.jpg', 1, 0.8, 400, 400, 99, 99],
+    #     ['3.jpg', 1, 0.9, 10, 10, 10, 10],
+    #     ['3.jpg', 1, 0.3, 10, 10, 10, 10],
+    #     ['3.jpg', 1, 0.2, 10, 10, 10, 10],
+    # ]
+    #
+    # rec, prec, ap = det_eval(dets, target_ano, 1, 0.75, plot=True)
+    # print(rec)
+    # print(prec)
+    # print(ap)
