@@ -1,0 +1,60 @@
+
+data:
+  dataloader:
+    train:
+      batch_size: 128
+      num_workers: 32
+      shuffle: true
+      drop_last: true
+    valid:
+      batch_size: 1
+      num_workers: 4
+      shuffle: true
+
+  dataset:
+    train:
+      root: '/simple_ssd/ys2/ys_MSCOCO/train'
+      txt_path:
+      max_detection_num: 50
+
+    test:
+      root: '/simple_ssd/ys2/ys_MSCOCO/test'
+
+model:
+  mask_iou_threshold: !!float 0.5
+  out_confidence_filter_threshold: !!float 0.5
+  nms_iou_threshold: !!float 0.4
+  net:
+    num_class: 80
+    num_anchor: len($..flt_anchor)
+    im_size: [416, 416]
+    feature_size: [[13, 13], [26, 26]]
+  loss:
+  weight_path: #  join($project_dir, 'model/tiny_yolo_epoch99_weight')
+  flt_anchor: [[0.024038, 0.033654], [0.055288, 0.064904], [0.088942, 0.139423], [0.194712, 0.197115], [0.324519, 0.40625], [0.826923, 0.766827]]
+
+optim:
+  lr: !!float 1e-3
+  weight_decay: !!float 1e-5
+
+train:
+  vis_interval: 10
+  valid_interval: 100
+  test_interval: 1000
+  save_interval: 1000
+  device: 'cuda'
+  device_ids: [0, 1, 2, 3]
+
+test:
+  image_dir: join($project_dir, 'tst/images')
+  out_dir: join($project_dir, 'tst/images_out')
+  device: 'cuda'
+  device_ids: [0]
+
+save:
+  root:
+  model: join($project_dir, 'train/res', $config_name+'_'+$user+'_'+$time)
+  tensorboard: join($project_dir, 'train/res/tensorboard', $config_name+'_'+$user+'_'+$time)
+
+tensorboard:
+  enable: true

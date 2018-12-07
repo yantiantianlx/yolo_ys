@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="root@10.255.0.48:30878">
+    <serverData>
+      <paths name="root@10.255.0.10:32105">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/root/ys2/tinyyolo" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="root@10.255.0.13:31786">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/root/ys2/tinyyolo" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="root@10.255.0.3:31564">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/root/ys2/tinyyolo" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="root@10.255.0.48:30878">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/root/ys2/tinyyolo" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>

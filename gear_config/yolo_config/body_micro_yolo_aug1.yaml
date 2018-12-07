@@ -1,0 +1,67 @@
+
+data:
+  dataloader:
+    train:
+      batch_size: 128
+      num_workers: 32
+      shuffle: true
+      drop_last: true
+    valid:
+      batch_size: 1
+      num_workers: 4
+      shuffle: true
+
+  dataset:
+    augmentation:
+      1
+    train:
+      min_h: 0.2
+      min_w: 0.1
+      max_detection_num: 10
+      root: '/simple_ssd/ys2/human_detection_data/train'
+      txt_path: join($.root, 'pair.txt')
+    test:
+      root: '/simple_ssd/ys2/human_detection_data/test'
+    valid:
+      root: '/simple_ssd/ys2/human_detection_data/test'
+
+model:
+  mask_iou_threshold: !!float 0.5
+  out_confidence_filter_threshold: !!float 0.5
+  nms_iou_threshold: !!float 0.4
+  net:
+    num_class: 0
+    num_anchor: len($..flt_anchor)
+    im_size: [224, 224]
+    feature_size: [[7, 7], [14, 14]]
+  loss:
+  weight_path: join($project_dir, 'model/body_micro_yolo/init_weight')
+  flt_anchor: [[0.21, 0.71], [0.27, 0.55], [0.39, 0.39], [0.3, 1.0], [0.39, 0.77], [0.55, 0.55], [0.5, 1.0], [0.71, 0.71]]
+
+optim:
+  lr_decay_mode: 'cosine_decay_restarts'
+  lr: !!float 1e-3
+  weight_decay: !!float 1e-5
+
+train:
+  vis_interval: 10
+  valid_interval: 100
+  test_interval: 1000
+  save_interval: 1000
+  device: 'cuda'
+  device_ids: [0, 1, 2, 3]
+
+test:
+  image_dir: join($project_dir, 'tst/images')
+  out_dir: join($project_dir, 'tst/images_out')
+  device: 'cuda'
+  device_ids: [0]
+
+save:
+  root:
+  hyper: join($project_dir, 'train/res', $config_name+'_'+$user+'_'+$time)
+  model: join($project_dir, 'train/res', $config_name+'_'+$user+'_'+$time)
+  tensorboard: join($project_dir, 'train/res/tensorboard', $config_name+'_'+$user+'_'+$time)
+
+tensorboard:
+  enable: true

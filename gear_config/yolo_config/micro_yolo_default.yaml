@@ -1,0 +1,61 @@
+
+data:
+  dataloader:
+    train:
+      batch_size: 16
+      num_workers: 16
+      shuffle: true
+    valid:
+      batch_size: 1
+      num_workers: 4
+      shuffle: true
+
+  dataset:
+    train:
+      root: '/simple_ssd/ys2/tiny_yolo_project/cleared_hand_detection'
+      relative_txt_path:
+      txt_path:
+
+model:
+  mask_iou_threshold: !!float 0.5
+  out_confidence_filter_threshold: !!float 0.05
+  nms_iou_threshold: !!float 0.4
+  net:
+    num_class: 1
+    num_anchor: len($..anchor)
+    im_size: [160, 160]
+    feature_size: [[10, 10], [20, 20]]
+  loss:
+  weight_path: join($project_dir, 'model/body_micro_yolo_epoch1_weight')
+  anchor: [[10,14], [23,27], [37,58], [81,82], [135,169]]
+
+optim:
+  lr: !!float 1e-4
+  weight_decay: !!float 1e-5
+
+train:
+  epochs: 100
+  log_iteration_interval: 10
+  save_model_epoch_interval: 1
+  valid_epoch_interval: 1
+  device: 'cuda'
+  device_ids: [0, 1, 2, 3]
+
+test:
+  image_dir: join($project_dir, 'tst/images')
+  out_dir: join($project_dir, 'tst/images_out')
+  device: 'cuda'
+  device_ids: [0]
+
+save:
+  root: join('/simple_ssd/ys2/tiny_yolo_project/tiny_yolo/train/res', $config_name+'_'+$user+'_'+$time)
+  model: join($.root, 'models')
+  train: join($.root, 'train')
+  valid: join($.root, 'valid')
+  analyze: join($.root, 'valid/coco_analyze')
+  tensorboard: join($.root, 'tensorboard')
+  test: join($.root, 'tst')
+
+tensorboard:
+  enable: true
+
