@@ -10,7 +10,7 @@ from data.dataset import Hand_Dataset
 from model.body_micro_yolo.body_micro_yolo_net import YoloV3_Micro
 from model.bbox_format import Bbox_Format
 from model.predict_process import model_out_to_model_predict, none_max_suppression, confidence_filter
-from model.map import det_eval
+from tst.map import det_eval
 
 
 # test() ===============================================================================================================

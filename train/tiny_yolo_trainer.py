@@ -18,6 +18,7 @@ from model.loss import YOLOLoss
 from model.bbox_format import Bbox_Format
 from model.predict_process import model_out_to_model_predict, none_max_suppression, confidence_filter
 from tst.tiny_yolo_tester import Tester
+from valid.tiny_yolo_valider import Valider
 
 
 class Trainer(nn.Module):
@@ -60,10 +61,15 @@ class Trainer(nn.Module):
                                             self.arg.model.net.num_class, self.arg.model.mask_iou_threshold))
 
         self.tester = Tester(self.arg)
+        self.valider = Valider(self.arg)
 
     def evaluate(self):
         score = self.tester.tst(self.net)
         return score
+
+    def validate(self):
+        valid_loss = self.valider.valid(self.net)
+        return valid_loss
 
     def save_weight(self, save_path):  # save net_weight
         os.makedirs(os.path.dirname(save_path), exist_ok=True)

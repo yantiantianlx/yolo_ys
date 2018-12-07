@@ -20,6 +20,9 @@ data:
     test:
       root: '/simple_ssd/ys2/ys_MSCOCO/test'
 
+    valid:
+      root: '/simple_ssd/ys2/ys_MSCOCO/test'
+
 model:
   mask_iou_threshold: !!float 0.5
   out_confidence_filter_threshold: !!float 0.5

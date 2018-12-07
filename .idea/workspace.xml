@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2fe8c3b0-64b3-4ff2-9e39-82d3fb307dde" name="Default Changelist" comment="fix net.train() miss bug, fix vis step bug, fix hyper explore bug, change multiprocess pool to process">
-      <change afterPath="$PROJECT_DIR$/tst/tiny_yolo_valider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/coco_category.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/coco_category.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/coco_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/coco_dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gear_config/yolo_config/tiny_yolo_default.py" beforeDir="false" afterPath="$PROJECT_DIR$/gear_config/yolo_config/tiny_yolo_default.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gear_config/yolo_config/tiny_yolo_default.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/gear_config/yolo_config/tiny_yolo_default.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/predict_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/predict_process.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train/tiny_yolo_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/train/tiny_yolo_trainer.py" afterDir="false" />
+    <list default="true" id="2fe8c3b0-64b3-4ff2-9e39-82d3fb307dde" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tst/cartucho_map.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tst/dashao_map.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tst/map.py" beforeDir="false" afterPath="$PROJECT_DIR$/tst/map.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +14,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/tinyyolo$pbt_controler.coverage" NAME="pbt_controler Coverage Results" MODIFIED="1543991680695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gear_optimize" />
+    <SUITE FILE_PATH="coverage/tinyyolo$dashao_map.coverage" NAME="dashao_map Coverage Results" MODIFIED="1544175575812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tst" />
     <SUITE FILE_PATH="coverage/tinyyolo$plt_show_im_with_rect.coverage" NAME="plt_show_im_with_rect Coverage Results" MODIFIED="1544098105207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
     <SUITE FILE_PATH="coverage/tinyyolo$reorganize_test_json.coverage" NAME="reorganize_test_json Coverage Results" MODIFIED="1544079911984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/temp_for_clear_data" />
     <SUITE FILE_PATH="coverage/tinyyolo$anchor_culculator.coverage" NAME="anchor_culculator Coverage Results" MODIFIED="1544087486989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
@@ -31,6 +27,7 @@
     <SUITE FILE_PATH="coverage/tinyyolo$ttttest.coverage" NAME="ttttest Coverage Results" MODIFIED="1543563249791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gear_optimize" />
     <SUITE FILE_PATH="coverage/tinyyolo$coco_dataset.coverage" NAME="coco_dataset Coverage Results" MODIFIED="1544150610642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
     <SUITE FILE_PATH="coverage/tinyyolo$generate_txt.coverage" NAME="generate_txt Coverage Results" MODIFIED="1544080746409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
+    <SUITE FILE_PATH="coverage/tinyyolo$model_utils.coverage" NAME="model_utils Coverage Results" MODIFIED="1544166077880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
     <SUITE FILE_PATH="coverage/tinyyolo$tttt.coverage" NAME="tttt Coverage Results" MODIFIED="1544013037743" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gear_config/yolo_config" />
   </component>
   <component name="DatabaseView">
@@ -63,9 +60,9 @@
           <entry key="_bootstrap&gt;" value="2" />
           <entry key="jpg" value="6" />
           <entry key="md" value="6" />
-          <entry key="py" value="309" />
+          <entry key="py" value="358" />
           <entry key="valider_body_yolo" value="1" />
-          <entry key="yaml" value="45" />
+          <entry key="yaml" value="47" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -74,25 +71,25 @@
           <entry key="Markdown" value="6" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="PyRemoteDebug" value="2" />
-          <entry key="Python" value="309" />
-          <entry key="YAML" value="45" />
+          <entry key="Python" value="358" />
+          <entry key="YAML" value="47" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="14" />
+          <entry key="dummy" value="21" />
           <entry key="md" value="4" />
-          <entry key="py" value="15655" />
-          <entry key="txt" value="397" />
-          <entry key="yaml" value="181" />
+          <entry key="py" value="16951" />
+          <entry key="txt" value="533" />
+          <entry key="yaml" value="190" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="4" />
-          <entry key="PLAIN_TEXT" value="411" />
-          <entry key="Python" value="15655" />
-          <entry key="YAML" value="181" />
+          <entry key="PLAIN_TEXT" value="554" />
+          <entry key="Python" value="16951" />
+          <entry key="YAML" value="190" />
         </counts>
       </usages-collector>
     </session>
@@ -102,32 +99,47 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/train/tiny_yolo_trainer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="674">
-              <caret line="185" lean-forward="true" selection-start-line="185" selection-end-line="185" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tst/tiny_yolo_valider.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="57" column="42" lean-forward="true" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
+            <state relative-caret-position="3872">
+              <caret line="182" selection-start-line="182" selection-end-line="182" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <marker date="1544163241063" expanded="true" signature="3193:3275" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/coco_dataset.py">
+        <entry file="file://$PROJECT_DIR$/tst/map.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+            <state relative-caret-position="682">
+              <caret line="67" column="33" lean-forward="true" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
+                <marker date="1544175531198" expanded="true" signature="1981:1982" ph="..." />
+                <marker date="1544175531198" expanded="true" signature="5204:5216" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tst/cartucho_map.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1298">
+              <caret line="470" column="26" selection-start-line="470" selection-start-column="16" selection-end-line="470" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#15321#16341#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tst/dashao_map.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="101" column="18" lean-forward="true" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -143,8 +155,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>self.vis.glo</find>
-      <find>train_step_num</find>
       <find>np_im = cv2.rectangle(np_im, (x1, y1), (x2, y2), (255, 255, 0))</find>
       <find>wei</find>
       <find>self.id</find>
@@ -173,6 +183,8 @@
       <find>los</find>
       <find>target_class</find>
       <find>bbox_iou_x1y1x2y2</find>
+      <find>validate</find>
+      <find>npos</find>
     </findStrings>
     <replaceStrings>
       <replace>net</replace>
@@ -206,7 +218,6 @@
         <option value="$PROJECT_DIR$/model/map.py" />
         <option value="$PROJECT_DIR$/gear_config/yolo_config/tttt.py" />
         <option value="$PROJECT_DIR$/gear_config/generate_py_class_file.py" />
-        <option value="$PROJECT_DIR$/model/model_utils.py" />
         <option value="$PROJECT_DIR$/tst/tster_body_yolo.py" />
         <option value="$PROJECT_DIR$/gear_config/yolo_config/body_micro_yolo_aug1.yaml" />
         <option value="$PROJECT_DIR$/temp_for_clear_data/reorganize_test_json.py" />
@@ -220,11 +231,15 @@
         <option value="$PROJECT_DIR$/data/plt_show_im_with_rect.py" />
         <option value="$PROJECT_DIR$/data/coco_category.py" />
         <option value="$PROJECT_DIR$/data/coco_dataset.py" />
-        <option value="$PROJECT_DIR$/gear_config/yolo_config/tiny_yolo_default.yaml" />
         <option value="$PROJECT_DIR$/model/bbox_format.py" />
         <option value="$PROJECT_DIR$/model/predict_process.py" />
-        <option value="$PROJECT_DIR$/train/tiny_yolo_trainer.py" />
         <option value="$PROJECT_DIR$/tst/tiny_yolo_valider.py" />
+        <option value="$PROJECT_DIR$/train/tiny_yolo_trainer.py" />
+        <option value="$PROJECT_DIR$/gear_config/yolo_config/tiny_yolo_default.yaml" />
+        <option value="$PROJECT_DIR$/model/model_utils.py" />
+        <option value="$PROJECT_DIR$/tst/dashao_map.py" />
+        <option value="$PROJECT_DIR$/tst/map.py" />
+        <option value="$PROJECT_DIR$/tst/cartucho_map.py" />
       </list>
     </option>
   </component>
@@ -234,9 +249,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1269" />
-    <option name="y" value="365" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="1230" />
+    <option name="y" value="378" />
     <option name="width" value="1890" />
     <option name="height" value="810" />
   </component>
@@ -265,6 +280,12 @@
             <path>
               <item name="tinyyolo" type="b2602c69:ProjectViewProjectNode" />
               <item name="tinyyolo" type="462c0819:PsiDirectoryNode" />
+              <item name="gear_config" type="462c0819:PsiDirectoryNode" />
+              <item name="yolo_config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tinyyolo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tinyyolo" type="462c0819:PsiDirectoryNode" />
               <item name="gear_optimize" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -280,12 +301,6 @@
             <path>
               <item name="tinyyolo" type="b2602c69:ProjectViewProjectNode" />
               <item name="tinyyolo" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="tiny_yolo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tinyyolo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tinyyolo" type="462c0819:PsiDirectoryNode" />
               <item name="temp_for_clear_data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -297,6 +312,11 @@
               <item name="tinyyolo" type="b2602c69:ProjectViewProjectNode" />
               <item name="tinyyolo" type="462c0819:PsiDirectoryNode" />
               <item name="tst" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tinyyolo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tinyyolo" type="462c0819:PsiDirectoryNode" />
+              <item name="valid" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -321,7 +341,11 @@
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/gear_config/yolo_config/tiny_yolo_default.yaml" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tst" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/valid" />
       <recent name="$PROJECT_DIR$/tst" />
       <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$/train" />
@@ -340,7 +364,51 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.tiny_yolo_trainer">
+  <component name="RunManager" selected="Python.dashao_map">
+    <configuration name="dashao_map" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="tinyyolo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tst" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tst/dashao_map.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="model_utils" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="tinyyolo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model/model_utils.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="tiny_yolo_trainer" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="tinyyolo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -388,9 +456,13 @@
     <list>
       <item itemvalue="Python.trainer_body_yolo" />
       <item itemvalue="Python.tiny_yolo_trainer" />
+      <item itemvalue="Python.model_utils" />
+      <item itemvalue="Python.dashao_map" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.dashao_map" />
+        <item itemvalue="Python.model_utils" />
         <item itemvalue="Python.tiny_yolo_trainer" />
         <item itemvalue="Python.trainer_body_yolo" />
       </list>
@@ -512,21 +584,35 @@
       <option name="project" value="LOCAL" />
       <updated>1544100571604</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="coco data runnable and rewrite iou for tensor list np">
+      <created>1544166203350</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1544166203350</updated>
+    </task>
+    <task id="LOCAL-00017" summary="iou for (1dim, 2dim)">
+      <created>1544170243120</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1544170243120</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1200" y="376" width="1920" height="1082" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15901814" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15901814" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="File Transfer" weight="0.32983193" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32983193" />
-      <window_info active="true" anchor="bottom" x="0" y="57" width="1147" height="1863" id="Run" order="2" type="WINDOWED" visible="true" weight="0.32983193" />
-      <window_info anchor="bottom" x="0" y="57" width="1147" height="1863" id="Debug" order="3" type="WINDOWED" weight="0.39915967" />
+      <window_info anchor="bottom" x="0" y="57" width="1147" height="1863" id="Run" order="2" type="WINDOWED" visible="true" weight="0.32983193" />
+      <window_info anchor="bottom" x="0" y="57" width="1147" height="1863" id="Debug" order="3" type="WINDOWED" visible="true" weight="0.39915967" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -566,7 +652,9 @@
     <MESSAGE value="[]" />
     <MESSAGE value="test test_image" />
     <MESSAGE value="add coco dataset" />
-    <option name="LAST_COMMIT_MESSAGE" value="add coco dataset" />
+    <MESSAGE value="coco data runnable and rewrite iou for tensor list np" />
+    <MESSAGE value="iou for (1dim, 2dim)" />
+    <option name="LAST_COMMIT_MESSAGE" value="iou for (1dim, 2dim)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -629,116 +717,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gear_config/yaml_to_object.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="95" column="16" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gear_config/yolo_config/tttt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gear_config/yolo_config/micro_yolo_default.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1820">
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gear_config/generate_py_class_file.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-288">
-          <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gear_optimize/ttttttest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="27" column="14" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/body_micro_yolo/body_micro_yolo_net.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-            <marker date="1543569920120" expanded="true" signature="2043:2049" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tst/image_out/2.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tst/image_out/1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tst/image_out/10.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tst/image_out/12.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tst/image_out/27.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tst/image_out/33.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/map.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="881">
-          <caret line="88" column="4" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/model_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="26" column="15" selection-start-line="26" selection-start-column="15" selection-end-line="31" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/temp_for_clear_data/clear_up_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-464">
-          <caret line="35" column="31" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/temp_for_clear_data/reorganize_train_json.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="53" column="34" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/remote_sources/-1777013497/-605128486/tokenize.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="451" selection-start-line="451" selection-end-line="451" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/generate_txt.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1188">
@@ -750,13 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="172" column="4" selection-start-line="172" selection-start-column="4" selection-end-line="172" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/rectangle_select.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -793,8 +764,8 @@
           <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <marker date="1544069948676" expanded="true" signature="1318:6774" ph="..." />
-            <marker date="1544069948676" expanded="true" signature="2188:2193" ph="..." />
+            <marker date="1544163737194" expanded="true" signature="1316:6772" ph="..." />
+            <marker date="1544163737194" expanded="true" signature="2186:2191" ph="..." />
           </folding>
         </state>
       </provider>
@@ -850,36 +821,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gear_tool/conversion_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/363483267/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="3618" column="8" selection-start-line="3618" selection-start-column="8" selection-end-line="3618" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/363483267/cv2/cv2/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="740">
           <caret line="8789" selection-start-line="8770" selection-end-line="8789" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/coco_category.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="156" column="2" selection-start-line="156" selection-start-column="2" selection-end-line="156" selection-end-column="2" />
-          <folding>
-            <marker date="1544150512756" expanded="true" signature="2006:2011" ph="..." />
-            <marker date="1544150512756" expanded="true" signature="2082:2087" ph="..." />
-            <marker date="1544150512756" expanded="true" signature="2359:2362" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -890,13 +835,6 @@
           <folding>
             <marker date="1544098269302" expanded="true" signature="252:253" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tst/tiny_yolo_tester.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="60" column="15" lean-forward="true" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -917,51 +855,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gear_config/yolo_config/tiny_yolo_default.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="76" column="13" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2018.2/system/remote_sources/363483267/-1679216578/torch/nn/parallel/data_parallel.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="115" column="8" selection-start-line="115" selection-start-column="8" selection-end-line="115" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gear_config/yolo_config/tiny_yolo_default.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="24" column="46" lean-forward="true" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/loss.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <marker date="1543831640194" expanded="true" signature="724:730" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/predict_process.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/bbox_format.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-506">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -996,30 +893,243 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/train/tiny_yolo_trainer.py">
+    <entry file="file://$PROJECT_DIR$/tst/tiny_yolo_valider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="674">
-          <caret line="185" lean-forward="true" selection-start-line="185" selection-end-line="185" />
+        <state relative-caret-position="-1144">
+          <caret line="67" column="17" lean-forward="true" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/coco_dataset.py">
+    <entry file="file://$PROJECT_DIR$/tst/tiny_yolo_tester.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+        <state relative-caret-position="-1320">
+          <caret line="60" column="15" lean-forward="true" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gear_config/yolo_config/tiny_yolo_default.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1584">
+          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gear_config/yolo_config/tiny_yolo_default.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/valid/tiny_yolo_valider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train/train_body_yolo_aug1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/temp_for_clear_data/clear_up_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="35" column="31" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="31" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tst/tiny_yolo_valider.py">
+    <entry file="file://$PROJECT_DIR$/model/loss.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="57" column="42" lean-forward="true" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
+        <state relative-caret-position="375">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <marker date="1543831640194" expanded="true" signature="724:730" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gear_tool/clear_up_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/coco_category.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="156" column="2" selection-start-line="156" selection-start-column="2" selection-end-line="156" selection-end-column="2" />
+          <folding>
+            <marker date="1544150512756" expanded="true" signature="2006:2011" ph="..." />
+            <marker date="1544150512756" expanded="true" signature="2082:2087" ph="..." />
+            <marker date="1544150512756" expanded="true" signature="2359:2362" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tst/tst_body_yolo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-792">
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gear_tool/decorator.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/rectangle_select.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1034">
+          <caret line="47" column="25" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train/tiny_yolo_trainer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3872">
+          <caret line="182" selection-start-line="182" selection-end-line="182" />
+          <folding>
+            <marker date="1544163241063" expanded="true" signature="3193:3275" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/temp_for_clear_data/tst_new_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/temp_for_clear_data/reorganize_train_json.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="53" column="34" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/predict_process.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/coco_dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/augmentation.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/bbox_format.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1432">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gear_tool/conversion_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="24" column="14" lean-forward="true" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gear_tool/gear_utils.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gear_tool/model_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/model_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/remote_sources/363483267/-1679216578/numpy/core/fromnumeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="2100" column="4" selection-start-line="2100" selection-start-column="4" selection-end-line="2100" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/remote_sources/363483267/-1679216578/numpy/core/getlimits.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="304" column="6" selection-start-line="304" selection-start-column="6" selection-end-line="304" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/363483267/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="4164" column="8" selection-start-line="4164" selection-start-column="8" selection-end-line="4164" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tst/map.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="67" column="33" lean-forward="true" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <marker date="1544175531198" expanded="true" signature="1981:1982" ph="..." />
+            <marker date="1544175531198" expanded="true" signature="5204:5216" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tst/cartucho_map.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1298">
+          <caret line="470" column="26" selection-start-line="470" selection-start-column="16" selection-end-line="470" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#15321#16341#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tst/dashao_map.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="101" column="18" lean-forward="true" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
         </state>
       </provider>
     </entry>

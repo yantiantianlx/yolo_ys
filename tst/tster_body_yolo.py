@@ -9,7 +9,7 @@ from gear_tool.conversion_utils import cxcywh_to_x1y1x2y2, torch_im_to_cv2_im
 from data.dataset import Hand_Dataset
 from model.bbox_format import Bbox_Format
 from model.predict_process import model_out_to_model_predict, none_max_suppression, confidence_filter
-from model.map import det_eval
+from tst.map import det_eval
 
 
 def bbox_iou_x1y1x2y2(box1, box2):

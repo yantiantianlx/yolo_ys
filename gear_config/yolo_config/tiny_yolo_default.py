@@ -51,12 +51,20 @@ class ARG_DATA_DATASET_TRAIN(Cls):
         self.txt_path = None
 
 
+class ARG_DATA_DATASET_VALID(Cls):
+    def __init__(self):
+        super().__init__()
+        self.gear_cls_tree_path = 'arg.data.dataset.valid'
+        self.root = '/simple_ssd/ys2/ys_MSCOCO/test'
+
+
 class ARG_DATA_DATASET(Cls):
     def __init__(self):
         super().__init__()
         self.gear_cls_tree_path = 'arg.data.dataset'
         self.test = ARG_DATA_DATASET_TEST()
         self.train = ARG_DATA_DATASET_TRAIN()
+        self.valid = ARG_DATA_DATASET_VALID()
 
 
 class ARG_DATA(Cls):
